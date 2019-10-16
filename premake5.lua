@@ -33,6 +33,17 @@ project 'Box2D'
 	includedirs { '.' }
 	targetdir ("../../bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("../../build/" .. outputdir .. "/%{prj.name}")
+	
+	filter "configurations:Debug"
+		runtime "Debug"
+		defines { 'DEBUG' }
+		optimize "Off"
+		symbols "On"
+
+	filter "configurations:Release"
+		runtime "Release"
+		defines { 'NDEBUG' }
+		optimize "On"
 
 project 'HelloWorld'
 	kind 'ConsoleApp'
@@ -41,6 +52,17 @@ project 'HelloWorld'
 	links { 'Box2D' }
 	targetdir ("../../bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("../../build/" .. outputdir .. "/%{prj.name}")
+	
+	filter "configurations:Debug"
+		runtime "Debug"
+		defines { 'DEBUG' }
+		optimize "Off"
+		symbols "On"
+
+	filter "configurations:Release"
+		runtime "Release"
+		defines { 'NDEBUG' }
+		optimize "On"
 
 project 'Testbed'
 	kind 'ConsoleApp'
@@ -49,6 +71,17 @@ project 'Testbed'
 	includedirs { '.' }
 	targetdir ("../../bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("../../build/" .. outputdir .. "/%{prj.name}")
+	
+	filter "configurations:Debug"
+		runtime "Debug"
+		defines { 'DEBUG' }
+		optimize "Off"
+		symbols "On"
+
+	filter "configurations:Release"
+		runtime "Release"
+		defines { 'NDEBUG' }
+		optimize "On"
 
 	files
 	{
